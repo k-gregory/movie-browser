@@ -1,0 +1,7 @@
+{
+  "name": "movie-browser-client-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
