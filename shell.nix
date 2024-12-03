@@ -5,6 +5,7 @@ pkgs.mkShell {
     pkgs.nodejs  # Node.js (required for Angular CLI)
     pkgs.yarn    # Yarn (optional, for managing dependencies)
     pkgs.git     # Git (optional, for version control)
+    pkgs.python3 # For built-in web server
   ];
 
   shellHook = ''
