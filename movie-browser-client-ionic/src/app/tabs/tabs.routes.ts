@@ -7,30 +7,30 @@ export const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'feed',
         loadComponent: () =>
-          import('../tab1/tab1.page').then((m) => m.Tab1Page),
+          import('../feed/feed.component').then((m) => m.FeedComponent),
       },
       {
-        path: 'tab2',
+        path: 'search',
         loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+          import('../movie-search/movie-search.component').then((m) => m.MovieSearchComponent),
       },
       {
-        path: 'tab3',
+        path: 'watchlist',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../watchlist/watchlist.component').then((m) => m.WatchlistComponent),
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/feed',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/feed',
     pathMatch: 'full',
   },
 ];
