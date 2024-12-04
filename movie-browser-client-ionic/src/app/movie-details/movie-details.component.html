@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ movie?.title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeDetails()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="movie">
+  <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }} poster">
+  <ion-list>
+    <ion-item>
+      <h2>Release Date: {{ movie.release_date }}</h2>
+    </ion-item>
+    <ion-item>
+      <p>{{ movie.overview }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

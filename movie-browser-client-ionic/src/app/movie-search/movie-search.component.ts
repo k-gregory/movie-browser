@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { IonThumbnail } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-search',
@@ -21,7 +22,7 @@ export class MovieSearchComponent {
   
   @Output() movieSelected = new EventEmitter<Movie>();
 
-  constructor(private movieService: MoviedbService) {}
+  constructor(private movieService: MoviedbService, private router: Router) {}
 
   onSearch(): void {
     if (this.query.trim()) {
@@ -30,7 +31,7 @@ export class MovieSearchComponent {
   }
 
   selectMovie(movie: Movie): void {
-    this.movieSelected.emit(movie);
+     this.router.navigate(['/movie', movie.id]);
   }
 
 }

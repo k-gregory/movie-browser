@@ -36,4 +36,9 @@ export class MoviedbService {
     const url = `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${query}`;
     return this.http.get<any>(url).pipe(map(response => response.results as Movie[]));
   }
+
+  getMovieDetails(movieId: number): Observable<Movie> {
+    const url = `${this.apiUrl}/movie/${movieId}?api_key=${this.apiKey}`;
+    return this.http.get<Movie>(url);
+  }
 }
